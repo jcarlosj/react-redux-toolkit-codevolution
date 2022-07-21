@@ -1,12 +1,12 @@
-const configureStore = require( '@reduxjs/toolkit' ).configureStore;
-const { getDefaultMiddleware } = require('@reduxjs/toolkit');
-const reduxLogger = require( 'redux-logger' );
+import pkg from '@reduxjs/toolkit';
+import reduxLogger from 'redux-logger';
 
-const cakeReducer = require( '../features/cake/cakeSlice' );
-const icecreamReducer = require( '../features/icecream/icecreamSlice' );
-const userReducer = require( '../features/user/userSlice' );
-const userByIdReducer = require( '../features/user/userByIdSlice' );
+import cakeReducer from'../features/cake/cakeSlice.js';
+import icecreamReducer from'../features/icecream/icecreamSlice.js';
+import userReducer from'../features/user/userSlice.js';
+import userByIdReducer from'../features/user/userByIdSlice.js';
 
+const { configureStore, getDefaultMiddleware } = pkg;
 const logger = reduxLogger.createLogger();
 
 
@@ -24,4 +24,4 @@ const store = configureStore({
 });
 
 
-module.exports = store;
+export default store;

@@ -1,6 +1,8 @@
-const createSlice = require( '@reduxjs/toolkit' ).createSlice;
-const createAsyncThunk = require( '@reduxjs/toolkit' ).createAsyncThunk;
-const axios = require( 'axios' );
+import pkg from '@reduxjs/toolkit';
+import axios from 'axios';
+
+const { createSlice, createAsyncThunk } = pkg;
+
 
 // ! initial state ( default values )
 const initialState = {
@@ -10,7 +12,7 @@ const initialState = {
 }
 
 // ! Define async action creator: an action creator returns an action (Invocamos la creacion de un proceso asincrono)
-const fetchUserById = createAsyncThunk(
+export const fetchUserById = createAsyncThunk(
     'user/fetchUserById',
     async ( user_id ) => {
 
@@ -44,5 +46,4 @@ const userByIDSlices = createSlice({
 });
 
 
-module.exports = userByIDSlices.reducer;         // ? Exportamos sus reducers
-module.exports.fetchUserById = fetchUserById;     // ? Exportamos funcion con procesos asincronos
+export default userByIDSlices.reducer;         // ? Exportamos sus reducers

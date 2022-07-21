@@ -1,6 +1,8 @@
-const createSlice = require( '@reduxjs/toolkit' ).createSlice;
-const createAsyncThunk = require( '@reduxjs/toolkit' ).createAsyncThunk;
-const axios = require( 'axios' );
+import pkg from '@reduxjs/toolkit';
+import axios from 'axios';
+
+const { createSlice, createAsyncThunk } = pkg;
+
 
 // ! initial state ( default values )
 const initialState = {
@@ -11,7 +13,7 @@ const initialState = {
 
 // ! Define async action creator: an action creator returns an action (Invocamos la creacion de un proceso asincrono)
 // ? fetchUsers: El proceso asincrono generará tipos de acciones pendientes, cumplidas y rechazadas
-const fetchUsers = createAsyncThunk( 
+export const fetchUsers = createAsyncThunk( 
         'user/fetchUsers',          // ? 'nombre de la accion' (action type)
         async () => {               // ? funcion callback que crea el payload
             const response = await axios.get( 'https://jsonplaceholder.typicode.com/users' );
@@ -47,5 +49,4 @@ const userSlice = createSlice({
 });
 
 
-module.exports = userSlice.reducer;         // ? Exportamos sus reducers
-module.exports.fetchUsers = fetchUsers;     // ? Exportamos funcion con procesos asincronos
+export default userSlice.reducer;         // ? Exportamos sus reducers
