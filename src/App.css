@@ -39,3 +39,27 @@
 .read-the-docs {
   color: #888;
 }
+
+.async-app, .store-app {
+  border: 1px dotted gray;
+  margin: 2rem 0;
+  padding: 2rem;
+}
+
+.users, .store {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+}
+.users div, .store div {
+  flex: 1 0 auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+button {
+  margin: 0 0.5rem;
+}
