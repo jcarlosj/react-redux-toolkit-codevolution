@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { ordered, restocked } from './icecreamSlice';
 
 
 const IcecreamView = () => {
+    const [ amountRestock, setAmountRestock ] = useState( 1 ); 
+
     // ? useSelector: Permite extraer datos del estado de la tienda Redux
     const numOfIcecreams = useSelector( state => state.icecream.numOfIceCreams );    // ? state.<key-reducer>.<property-value>
 
@@ -16,9 +19,16 @@ const IcecreamView = () => {
             <button
                 onClick={ () => dispatch( ordered() ) }
             >Order ice cream</button>
+            <input
+                type="number"
+                value={ amountRestock }
+                onChange={ event => setAmountRestock( parseInt( event.target.value ) ) }
+                min="1"
+                max="20"
+            />
             <button
-                onClick={ () => dispatch( restocked( 3 ) )}
-            >Restock 3 ice creams</button>
+                onClick={ () => dispatch( restocked( amountRestock ) )}
+            >Restock { amountRestock } ice creams</button>
         </div>
     );
 };
