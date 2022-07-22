@@ -1,9 +1,9 @@
-# React: Redux & Redux Toolkit
+# React: React-Redux & Redux Toolkit
 Los siguientes ejemplos se implementan sobre React usando React-Redux y Redux-Toolkit.
  - Tienda de pasteles y helados.
  - Obtener datos de una API a través procesos asíncronos.
 
-NOTA: Los anteriore proyectos fueron desarrollados, [en este repositorio](https://github.com/jcarlosj/redux-and-redux-toolkit-codevolution), usando Vanilla JavaScript para explicar el detalle de los conceptos detrás de Redux y posteriormente migrarlos a Redux Toolkit.
+NOTA: El anterior proyecto fue desarrollado en Vanilla JavaScript, [en este repositorio](https://github.com/jcarlosj/redux-and-redux-toolkit-codevolution), para explicar el detalle de los conceptos detrás de Redux y posteriormente migrarlos a Redux Toolkit.
 
 ## Tienda de pasteles y helados
 Tomamos el primero de los ejemplos del mundo real, una tienda de pasteles y helados. Identificamos las diferentes partes involucradas y las actividades que realizan
@@ -44,3 +44,11 @@ El estado de la tienda ahora es el número de pasteles en el estante junto con e
 #### Venta de pasteles
 - Tortas almacenadas en el estante
 - **Tendero 1** maneja la orden del cliente *CAKE_ORDERED* sin embargo de ahora en adelante todo pastel se servirá con una porción de helado. Al ordenar un pastel, también se hará automáticamente una orden de helado.
+
+# Scripts disponibles
+Los proyectos ejemplificados aqui se pueden desplegar usando los siguientes comandos
+### `npm i`
+Primero debe instalar las dependencias requeridas
+
+### `npm run dev`
+Lanzar el proyecto React usando React-Redux & Redux Toolkit
