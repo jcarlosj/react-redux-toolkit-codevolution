@@ -88,3 +88,7 @@ input[type="number"] {
   text-align: left;
   width: 60%;
 }
+
+.lb-user-id {
+  padding: 0 .5rem;
+}
