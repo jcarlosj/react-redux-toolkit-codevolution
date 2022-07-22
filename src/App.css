@@ -82,3 +82,9 @@ input[type="number"] {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
+.user-list {
+  margin: 0 auto;
+  text-align: left;
+  width: 60%;
+}

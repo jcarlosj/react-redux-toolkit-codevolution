@@ -17,6 +17,7 @@ export const fetchUsers = createAsyncThunk(
             const response = await axios.get( 'https://jsonplaceholder.typicode.com/users' );
 
             return response.data.map( user => ({
+                id: user.id,
                 name: user.name,
                 email: user.email
             }));
