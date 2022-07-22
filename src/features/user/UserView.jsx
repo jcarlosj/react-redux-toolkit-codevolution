@@ -1,20 +1,28 @@
 import { useSelector, useDispatch } from 'react-redux';   
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { fetchUsers } from './userSlice'
 
 
 const UserView = () => {
+    // ! Define un objeto mutable (Para controlar la doble ejecucion del efecto cuando React esta en modo Estricto)
+    const isEffectRun = useRef( false );
+
     // ? useSelector: Permite extraer datos del estado de la tienda Redux
     const dataUsers = useSelector( state => state.user );    // ? state.<key-reducer> por que es un proceso asincrono
-
-    console.log( dataUsers );
 
     // ? useDispatch: Devuelve una referencia a la función de despacho de la tienda Redux. Puede usarlo para enviar acciones según sea necesario.
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch( fetchUsers() );
+        // ! Verifica que el efecto no se ha lanzado
+        if( ! isEffectRun.current )
+            dispatch( fetchUsers() );
+
+        return () => {
+            console.log( 'Unmount hook useFetch!' );
+            isEffectRun.current = true;     // ! Cambia el estado del inmutable que controla consulta del API una sola ves ante la duplicidad de la ejecucion del hoook useEffect sobre el Hook u Componente
+        }
     }, [] );
     
 
