@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <div className="store-app">
         <h2>Tienda de pasteles y helados</h2>
-        <div class="store">
+        <div className="store">
           <CakeView />
           <IcecreamView />
         </div>

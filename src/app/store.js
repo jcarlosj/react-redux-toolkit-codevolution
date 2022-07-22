@@ -1,13 +1,10 @@
-import pkg from '@reduxjs/toolkit';
-import reduxLogger from 'redux-logger';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import logger from 'redux-logger';
 
 import cakeReducer from'../features/cake/cakeSlice.js';
 import icecreamReducer from'../features/icecream/icecreamSlice.js';
 import userReducer from'../features/user/userSlice.js';
 import userByIdReducer from'../features/user/userByIdSlice.js';
-
-const { configureStore, getDefaultMiddleware } = pkg;
-const logger = reduxLogger.createLogger();
 
 
 // ! Redux store

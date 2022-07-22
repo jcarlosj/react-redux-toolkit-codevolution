@@ -1,7 +1,5 @@
-import pkg from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-
-const { createSlice, createAsyncThunk } = pkg;
 
 
 // ! initial state ( default values )

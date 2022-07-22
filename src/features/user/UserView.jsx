@@ -2,7 +2,7 @@ const UserView = () => {
     return (
         <div className="async-app">
             <h2>Procesos asíncronos</h2>
-            <div class="users">
+            <div className="users">
                 <div>
                     <h3>User by id</h3>
                 </div>
